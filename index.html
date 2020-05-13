@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题</a>
+      <a class="article-title" href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题（终极版）</a>
     </h1>
   
 
@@ -89,11 +89,12 @@
         <p>让python2.7，python3.6，python3.8其乐融融</p>
 <hr>
 <p>第一步</p>
-<p>安装python2.7，python3.6，python3.8,安装时已经有pip,将文件中的<code>python.exe</code>和<code>pythonw.exe</code>分别改为<code>python2.7.exe</code>和<code>pythonw2.7.exe``python3.6.exe</code>和<code>pythonw3.6.exe``python3.8.exe</code>和<code>pythonw3.8.exe</code>并设置好环境变量</p>
+<p>安装python2.7，python3.6，python3.8,安装时已经有pip,并且默认添加到环境变量PATH</p>
 <p>第二步</p>
-<p>在cmd中分别运行<br><code>python3.8 -m pip install --upgrade pip --force-reinstall</code><br><code>python3.6 -m pip install --upgrade pip --force-reinstall</code><br><code>python2.7 -m pip install --upgrade pip --force-reinstall</code></p>
+<p>将所有需要python的命令分别改成<code>py -3.8</code>或<code>py -3.6</code>或<code>py -2.7</code></p>
+<p>例如：<br>改前的cmd命令：<code>python pip install ***</code><br>改后的cmd命令：<code>py -3.8 pip install ***</code></p>
 <hr>
-<h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成!"></a>大功告成!</h1><p>注意：<br>1.要区分这三个pip，要使用<code>pip2.7``pip3.6``pip3.8</code>分别取代<code>pip</code><br>2.要区分这三个python，要使用<code>python2.7``python3.6``python3.8</code>分别取代<code>python</code><br>===<br>备注：<br>1.python -m的意思是将库中的python模块用作脚本去运行。<br>主要区别在于sys.path不同<br>直接运行会将该脚本所在目录添加至sys.path<br>当做模块启动则会将当前运行命令的路径添加至sys.path</p>
+<p>写在后面：本文为终极版，曾经也踩了不少坑，最开始的做法是改名，但是pip炸了，后来有用reinstall强行续命，但是venv又炸了，故重新研究，此方法是终极版，也是最省时省力的方法，无需再改（也是官方推荐）</p>
 
       
     </div>
@@ -298,7 +299,7 @@
       <ul>
         
           <li>
-            <a href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题</a>
+            <a href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题（终极版）</a>
           </li>
         
           <li>
