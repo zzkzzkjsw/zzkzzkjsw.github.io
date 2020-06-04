@@ -64,6 +64,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git的使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-06-03T00:26:10.000Z" itemprop="datePublished">2020-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>工作区 working repository<br>暂存区 stage  (Index)<br>仓库   repository (Head)<br>具体讲解可参看B站小甲鱼git系列</p>
+<h1 id="Move-hello-cpp-to-local-repo"><a href="#Move-hello-cpp-to-local-repo" class="headerlink" title="Move hello.cpp to local repo"></a>Move hello.cpp to local repo</h1><h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>open git bash in the diresctory</p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><figure class="highlight plain"><figcaption><span>init```  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">to create a hidden folder named &#96;.git&#96;</span><br><span class="line">## Step 3</span><br><span class="line">&#96;&#96;&#96;git add hello.cpp&#96;&#96;&#96;  </span><br><span class="line">to move hello.cpp to Stage  </span><br><span class="line">&#96;&#96;&#96;git add .&#96;&#96;&#96;   </span><br><span class="line">move all files to Stage</span><br><span class="line">### Step 3.1</span><br><span class="line">&#96;&#96;&#96;git status&#96;&#96;&#96;  </span><br><span class="line">you can use this to check the status of the hello.cpp</span><br><span class="line">## Step 4</span><br><span class="line">&#96;&#96;&#96;git commit -m &#39;this is a hello cpp&#39;&#96;&#96;&#96;  </span><br><span class="line">to move hello.cpp to local repo in git</span><br><span class="line">### Step 4.1</span><br><span class="line">&#96;&#96;&#96;git status&#96;&#96;&#96;  </span><br><span class="line">you can use this to check the status of the hello.cpp</span><br><span class="line"></span><br><span class="line"># Delete hello.cpp in git</span><br><span class="line">## Step 1</span><br><span class="line">&#96;&#96;&#96;rm -rf hello.cpp</span><br></pre></td></tr></table></figure>
+<p>to delete hello.cpp in working space</p>
+<h2 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h2><figure class="highlight plain"><figcaption><span>rm hello.cpp```  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">to delete hello.cpp in Stage</span><br><span class="line">### Step 2.1</span><br><span class="line">you can combine Step1 and Step 2 by using  </span><br><span class="line">&#96;&#96;&#96;git rm -f hello.cpp&#96;&#96;&#96;  </span><br><span class="line">## Step 3</span><br><span class="line">&#96;&#96;&#96;git commit -m &#39;delete hello.cpp&#39; &#96;&#96;&#96;  </span><br><span class="line">to tell others why you commit your work</span><br><span class="line"></span><br><span class="line"># Move hello.cpp from local repo to repo in github</span><br><span class="line">## Step1</span><br><span class="line">&#96;&#96;&#96;git push</span><br></pre></td></tr></table></figure>
+
+<h1 id="Check-the-files-in-repo"><a href="#Check-the-files-in-repo" class="headerlink" title="Check the files in repo"></a>Check the files in repo</h1><p>use <code>git log</code> to check the files  </p>
+<p>use <code>git reflog</code> to check all historical files</p>
+<h1 id="Reset命令"><a href="#Reset命令" class="headerlink" title="Reset命令"></a>Reset命令</h1><p><code>git reset -- mixed HEAD~</code> 等效于<br><code>git reset -- HEAD~</code><br>相当于撤销add+commit  </p>
+<p><code>git reset --soft HEAD~</code><br>相当于撤销commit</p>
+<p><code>git reset --hard HEAD~</code>  </p>
+<p>相当于撤销add+commit，还删除了工作区文件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="ckb07zt9x0000h0cw35g8behj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-light-physics" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/02/light-physics/" class="article-date">
@@ -86,7 +134,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>A:对于光的相干条件，频率相等和相位差恒定不是一个意思吗？</p>
+        <p>双缝干涉实验</p>
+<img src="https://github.com/zzkzzkjsw/zzkzzkjsw.github.io/blob/master/%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89%E5%AE%9E%E9%AA%8C.png?raw=true" alt="图片替换文本" width="500" height="413" align="bottom" />
+
+<p>A:对于光的相干条件，频率相等和相位差恒定不是一个意思吗？</p>
 <p>Q:对于光波来说，是不一样的。因为光是由于原子的跃迁产生的，而且发出光的时间很短，即发出的是一个个有限波长的光波片段。即使两波源频率相等，且在某一点相遇的两列波片段1和2能相互加强(相位差恒定），但不能保证下一时刻的两列波在该点也是加强，因为即使两相干波中也有加强点和减弱点，即可能下一时刻该点可能是减弱点或是都不是，也就是说在该点的振动不是始终加强，即不能发生相干。注意，书上所说的波源的相位差要恒定，指的是在任意时刻发出的两列光相位差要相等，也是指在空间某一点任意某一时刻相位差恒定。而光发出的波列是不满足这一要求的。</p>
 
       
@@ -374,6 +425,10 @@
       <ul>
         
           <li>
+            <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/02/light-physics/">light_physics</a>
           </li>
         
@@ -387,10 +442,6 @@
         
           <li>
             <a href="/2020/05/10/PyUserInput%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">PyUserInput的安装和使用</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">如何用markdown格式写博客</a>
           </li>
         
       </ul>

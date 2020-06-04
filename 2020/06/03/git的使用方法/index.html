@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>git的使用方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="工作区 working repository暂存区 stage  (Index)仓库   repository (Head)具体讲解可参看B站小甲鱼git系列 Move hello.cpp to local repoStep 1open git bash in the diresctory Step 2init&#96;&#96;&#96;  12345678910111213141516171819to create">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git的使用方法">
+<meta property="og:url" content="http://yoursite.com/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="工作区 working repository暂存区 stage  (Index)仓库   repository (Head)具体讲解可参看B站小甲鱼git系列 Move hello.cpp to local repoStep 1open git bash in the diresctory Step 2init&#96;&#96;&#96;  12345678910111213141516171819to create">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-03T00:26:10.000Z">
+<meta property="article:modified_time" content="2020-06-04T03:28:17.425Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git的使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2020-06-03T00:26:10.000Z" itemprop="datePublished">2020-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git的使用方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>工作区 working repository<br>暂存区 stage  (Index)<br>仓库   repository (Head)<br>具体讲解可参看B站小甲鱼git系列</p>
+<h1 id="Move-hello-cpp-to-local-repo"><a href="#Move-hello-cpp-to-local-repo" class="headerlink" title="Move hello.cpp to local repo"></a>Move hello.cpp to local repo</h1><h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>open git bash in the diresctory</p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><figure class="highlight plain"><figcaption><span>init```  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">to create a hidden folder named &#96;.git&#96;</span><br><span class="line">## Step 3</span><br><span class="line">&#96;&#96;&#96;git add hello.cpp&#96;&#96;&#96;  </span><br><span class="line">to move hello.cpp to Stage  </span><br><span class="line">&#96;&#96;&#96;git add .&#96;&#96;&#96;   </span><br><span class="line">move all files to Stage</span><br><span class="line">### Step 3.1</span><br><span class="line">&#96;&#96;&#96;git status&#96;&#96;&#96;  </span><br><span class="line">you can use this to check the status of the hello.cpp</span><br><span class="line">## Step 4</span><br><span class="line">&#96;&#96;&#96;git commit -m &#39;this is a hello cpp&#39;&#96;&#96;&#96;  </span><br><span class="line">to move hello.cpp to local repo in git</span><br><span class="line">### Step 4.1</span><br><span class="line">&#96;&#96;&#96;git status&#96;&#96;&#96;  </span><br><span class="line">you can use this to check the status of the hello.cpp</span><br><span class="line"></span><br><span class="line"># Delete hello.cpp in git</span><br><span class="line">## Step 1</span><br><span class="line">&#96;&#96;&#96;rm -rf hello.cpp</span><br></pre></td></tr></table></figure>
+<p>to delete hello.cpp in working space</p>
+<h2 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h2><figure class="highlight plain"><figcaption><span>rm hello.cpp```  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">to delete hello.cpp in Stage</span><br><span class="line">### Step 2.1</span><br><span class="line">you can combine Step1 and Step 2 by using  </span><br><span class="line">&#96;&#96;&#96;git rm -f hello.cpp&#96;&#96;&#96;  </span><br><span class="line">## Step 3</span><br><span class="line">&#96;&#96;&#96;git commit -m &#39;delete hello.cpp&#39; &#96;&#96;&#96;  </span><br><span class="line">to tell others why you commit your work</span><br><span class="line"></span><br><span class="line"># Move hello.cpp from local repo to repo in github</span><br><span class="line">## Step1</span><br><span class="line">&#96;&#96;&#96;git push</span><br></pre></td></tr></table></figure>
+
+<h1 id="Check-the-files-in-repo"><a href="#Check-the-files-in-repo" class="headerlink" title="Check the files in repo"></a>Check the files in repo</h1><p>use <code>git log</code> to check the files  </p>
+<p>use <code>git reflog</code> to check all historical files</p>
+<h1 id="Reset命令"><a href="#Reset命令" class="headerlink" title="Reset命令"></a>Reset命令</h1><p><code>git reset -- mixed HEAD~</code> 等效于<br><code>git reset -- HEAD~</code><br>相当于撤销add+commit  </p>
+<p><code>git reset --soft HEAD~</code><br>相当于撤销commit</p>
+<p><code>git reset --hard HEAD~</code>  </p>
+<p>相当于撤销add+commit，还删除了工作区文件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="ckb07zt9x0000h0cw35g8behj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/02/light-physics/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">light_physics</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/light-physics/">light_physics</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/13/import%E7%9A%84%E8%AF%A6%E8%A7%A3/">import的详解</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题（终极版）</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/10/PyUserInput%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">PyUserInput的安装和使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
