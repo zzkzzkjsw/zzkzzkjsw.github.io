@@ -98,6 +98,9 @@
 <p><code>git reset --soft HEAD~</code><br>相当于撤销commit</p>
 <p><code>git reset --hard HEAD~</code>  </p>
 <p>相当于撤销add+commit，还删除了工作区文件</p>
+<h2 id="番外：Reset命令原理"><a href="#番外：Reset命令原理" class="headerlink" title="番外：Reset命令原理"></a>番外：Reset命令原理</h2><p><code>git reset -- mixed HEAD~</code>移动HEAD指针，还将之前repo中的文件覆盖现在的stage</p>
+<p><code>git reset -- soft HEAD~</code>只移动HEAD指针</p>
+<p><code>git reset -- hard HEAD~</code>移动HEAD指针，还将之前repo中的文件覆盖现在的stage和working repo</p>
 
       
     </div>
