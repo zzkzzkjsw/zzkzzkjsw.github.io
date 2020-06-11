@@ -15,7 +15,7 @@
 <meta property="og:description" content="工作区 working repository暂存区 stage  (Index)仓库   repository (Head)具体讲解可参看B站小甲鱼git系列 Move hello.cpp to local repoStep 1open git bash in the diresctory Step 2git initto create a hidden folder named .git Ste">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-03T00:26:10.000Z">
-<meta property="article:modified_time" content="2020-06-04T04:05:21.600Z">
+<meta property="article:modified_time" content="2020-06-10T06:37:25.929Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -96,8 +96,7 @@
 <h2 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h2><p><code>git commit -m &#39;this is a hello cpp&#39;</code><br>to move hello.cpp to local repo in git</p>
 <h3 id="Step-4-1"><a href="#Step-4-1" class="headerlink" title="Step 4.1"></a>Step 4.1</h3><p><code>git status</code><br>you can use this to check the status of the hello.cpp</p>
 <h1 id="Delete-hello-cpp-in-git"><a href="#Delete-hello-cpp-in-git" class="headerlink" title="Delete hello.cpp in git"></a>Delete hello.cpp in git</h1><h2 id="Step-1-1"><a href="#Step-1-1" class="headerlink" title="Step 1"></a>Step 1</h2><p><code>rm -rf hello.cpp</code><br>to delete hello.cpp in working space</p>
-<h2 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h2><p><code>git rm hello.cpp</code><br>to delete hello.cpp in Stage</p>
-<h3 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2.1"></a>Step 2.1</h3><p>you can combine Step1 and Step 2 by using<br><code>git rm -f hello.cpp</code>  </p>
+<h2 id="Step-2-1"><a href="#Step-2-1" class="headerlink" title="Step 2"></a>Step 2</h2><p><code>git rm hello.cpp</code><br>to delete hello.cpp in Stage and working space</p>
 <h2 id="Step-3-1"><a href="#Step-3-1" class="headerlink" title="Step 3"></a>Step 3</h2><p><code>git commit -m &#39;delete hello.cpp&#39;</code><br>to tell others why you commit your work</p>
 <h1 id="Move-hello-cpp-from-local-repo-to-repo-in-github"><a href="#Move-hello-cpp-from-local-repo-to-repo-in-github" class="headerlink" title="Move hello.cpp from local repo to repo in github"></a>Move hello.cpp from local repo to repo in github</h1><h2 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h2><p><code>git push</code></p>
 <h1 id="Check-the-files-in-repo"><a href="#Check-the-files-in-repo" class="headerlink" title="Check the files in repo"></a>Check the files in repo</h1><p>use <code>git log</code> to check the files  </p>
@@ -109,6 +108,16 @@
 <h2 id="番外：Reset命令原理"><a href="#番外：Reset命令原理" class="headerlink" title="番外：Reset命令原理"></a>番外：Reset命令原理</h2><p><code>git reset -- mixed HEAD~</code>移动HEAD指针，还将之前repo中的文件覆盖现在的stage</p>
 <p><code>git reset -- soft HEAD~</code>只移动HEAD指针</p>
 <p><code>git reset -- hard HEAD~</code>移动HEAD指针，还将之前repo中的文件覆盖现在的stage和working repo</p>
+<h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><h2 id="比较工作区和暂存区"><a href="#比较工作区和暂存区" class="headerlink" title="比较工作区和暂存区"></a>比较工作区和暂存区</h2><p><code>git diff</code></p>
+<h2 id="比较暂存区和repository"><a href="#比较暂存区和repository" class="headerlink" title="比较暂存区和repository"></a>比较暂存区和repository</h2><p><code>git diff --staged</code>  </p>
+<h2 id="比较工作区和repository"><a href="#比较工作区和repository" class="headerlink" title="比较工作区和repository"></a>比较工作区和repository</h2><p><code>git diff HEAD</code></p>
+<h2 id="比较工作区和history-repository"><a href="#比较工作区和history-repository" class="headerlink" title="比较工作区和history repository"></a>比较工作区和history repository</h2><p><code>git diff 2d4efb（此为ID）</code></p>
+<h2 id="比较history-repository1和history-repository2"><a href="#比较history-repository1和history-repository2" class="headerlink" title="比较history repository1和history repository2"></a>比较history repository1和history repository2</h2><p><code>git diff 2d4efb（此为ID1） 2d498b（此为ID2）</code>  </p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><h2 id="创建分支feature"><a href="#创建分支feature" class="headerlink" title="创建分支feature"></a>创建分支feature</h2><p><code>git branch feature</code>  </p>
+<h2 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h2><p><code>git checkout feature</code></p>
+<h2 id="查看当前分支"><a href="#查看当前分支" class="headerlink" title="查看当前分支"></a>查看当前分支</h2><p><code>git log --decorate</code></p>
+<h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><p><code>git merge feature</code></p>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><p><code>git branch -d feature</code></p>
 
       
     </div>
@@ -121,6 +130,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          学习强国
+        
+      </div>
+    </a>
   
   
     <a href="/2020/06/02/light-physics/" id="article-nav-older" class="article-nav-link-wrap">
@@ -162,6 +180,10 @@
       <ul>
         
           <li>
+            <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/">学习强国</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
           </li>
         
@@ -175,10 +197,6 @@
         
           <li>
             <a href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题（终极版）</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/10/PyUserInput%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">PyUserInput的安装和使用</a>
           </li>
         
       </ul>
