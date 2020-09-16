@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Traversal of BT | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="二叉树的遍历0.1 二叉树的定义123456789struct Tnode&amp;#123;    int data;    struct node *left;    struct node *right;    int times;    &#x2F;&#x2F;有时可以省略int times&amp;#125;;typedef struct Tnode* BinTree;  1.1 递归算法1.1.1 前序遍历1234567">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Traversal of BT">
+<meta property="og:url" content="http://yoursite.com/2020/09/05/Traversal-of-BT/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="二叉树的遍历0.1 二叉树的定义123456789struct Tnode&amp;#123;    int data;    struct node *left;    struct node *right;    int times;    &#x2F;&#x2F;有时可以省略int times&amp;#125;;typedef struct Tnode* BinTree;  1.1 递归算法1.1.1 前序遍历1234567">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-05T02:14:23.000Z">
+<meta property="article:modified_time" content="2020-09-05T11:43:40.558Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Traversal-of-BT" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/05/Traversal-of-BT/" class="article-date">
+  <time datetime="2020-09-05T02:14:23.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Traversal of BT
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h1><h2 id="0-1-二叉树的定义"><a href="#0-1-二叉树的定义" class="headerlink" title="0.1 二叉树的定义"></a>0.1 二叉树的定义</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tnode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">left</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">right</span>;</span></span><br><span class="line">    <span class="keyword">int</span> times;</span><br><span class="line">    <span class="comment">//有时可以省略int times</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Tnode</span>* <span class="title">BinTree</span>;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-1-递归算法"><a href="#1-1-递归算法" class="headerlink" title="1.1 递归算法"></a>1.1 递归算法</h2><h3 id="1-1-1-前序遍历"><a href="#1-1-1-前序遍历" class="headerlink" title="1.1.1 前序遍历"></a>1.1.1 前序遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BinTree <span class="title">pretraversal</span><span class="params">(BinTree BT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(BT)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,BT-&gt;data);</span><br><span class="line">        pretraversal(BT-&gt;left);</span><br><span class="line">        pretraversal(BT-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-1-非递归算法"><a href="#2-1-非递归算法" class="headerlink" title="2.1 非递归算法"></a>2.1 非递归算法</h2><h3 id="2-1-1-前序遍历"><a href="#2-1-1-前序遍历" class="headerlink" title="2.1.1 前序遍历"></a>2.1.1 前序遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pretraversal</span><span class="params">(BinTree BT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!BT) <span class="keyword">return</span>;</span><br><span class="line">    BinTree T=BT;</span><br><span class="line">    BinTree Stack[maxsize];<span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(T||top!=<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(T!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Stack[++top]=T;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,T-&gt;data);</span><br><span class="line">            T=T-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        T=Stack[top--];</span><br><span class="line">        T=T-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-2-中序遍历"><a href="#2-1-2-中序遍历" class="headerlink" title="2.1.2 中序遍历"></a>2.1.2 中序遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> InOrderTraversal)(BinTree BT)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(!BT) <span class="keyword">return</span>;</span><br><span class="line">    BinTree T=BT;</span><br><span class="line">    BinTree Stack[maxsize];<span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(T||top!=<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(T)</span><br><span class="line">        &#123;</span><br><span class="line">            Stack[++top]=T;</span><br><span class="line">            T=T-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        T=Stack[top--];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,T-&gt;data);</span><br><span class="line">        T=T-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-3-后序遍历"><a href="#2-1-3-后序遍历" class="headerlink" title="2.1.3 后序遍历"></a>2.1.3 后序遍历</h3><p>```c<br>void PostOrderTraversal(BinTree BT)<br>{<br>    if(!BT) return;<br>    BinTree T=BT;<br>    BinTree Stack[maxsize];int top=-1;</p>
+<pre><code>while(top!=-1||T)
+{
+    while(T)
+    {
+        Stack[++top]=T;
+        T=T-&gt;left;
+    }
+
+    T=Stack[top];
+    T-&gt;times++;
+    top--;
+
+    if(T-&gt;times==1)
+    {
+        Stack[++top]=T;
+        T=T-&gt;right;
+    }
+    else 
+    {
+        printf(&quot;%d&quot;,T-&gt;data);
+        T=NULL;
+    }
+
+}</code></pre><p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/05/Traversal-of-BT/" data-id="ckf5gdiyb0000mgcwcyyr6fq2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/10/Unicode-and-UTF-8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Unicode and UTF-8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/07/multifile/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">multifile</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/10/Unicode-and-UTF-8/">Unicode and UTF-8</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/05/Traversal-of-BT/">Traversal of BT</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/07/multifile/">multifile</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/">学习强国</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

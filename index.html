@@ -64,6 +64,172 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Unicode-and-UTF-8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/10/Unicode-and-UTF-8/" class="article-date">
+  <time datetime="2020-09-10T08:54:31.000Z" itemprop="datePublished">2020-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/10/Unicode-and-UTF-8/">Unicode and UTF-8</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="0-0-1-ASCII码的诞生"><a href="#0-0-1-ASCII码的诞生" class="headerlink" title="0.0.1 ASCII码的诞生"></a>0.0.1 ASCII码的诞生</h3><p>美国人最先发明了电脑，电脑是由二进制存储的，故美国人至少要表示a-Z，A-Z，0-9，!@#$%^&amp;*()等等字符，最终凑够了128种符号</p>
+<p>定义1字节为8位二进制数，可以表示2^8=256个字符；</p>
+<p>故ASCII码就诞生了，只占用1字节，且第一位为1，后七位分别对应a-z，A-Z，0-9，!@#$%^&amp;*()等等字符</p>
+<h3 id="0-1-1-中国的诞生和GB2312字符集"><a href="#0-1-1-中国的诞生和GB2312字符集" class="headerlink" title="0.1.1 中国的诞生和GB2312字符集"></a>0.1.1 中国的诞生和GB2312字符集</h3><p>计算机传入中国，故显示汉字成为了一个新的问题，由于汉字有几千个，故用1字节表示不了，所以我们改用了2字节，这样，我们可以表示2^16=65536个字符，经多方搜查，最终确定了汉字6763个和非汉字图形字符682个，共计7445个字符，于是便有许多空出来的位置，那么专家是怎么做的呢？</p>
+<p>Q1. 计算机怎么确认是ASCII码还是GB2312?<br>A1. 我们发现ASCII码总是0xxx xxxx的形式，所以GB2312的一定是1xxx xxxx 1xxx xxxx的形式，这样算来GB2312就只能存2^14=16384个字符，不过这也绰绰有余了。</p>
+<h3 id="0-1-2-中国的发展和GBK字符集"><a href="#0-1-2-中国的发展和GBK字符集" class="headerlink" title="0.1.2 中国的发展和GBK字符集"></a>0.1.2 中国的发展和GBK字符集</h3><p>我们发现在GB2312中1xxx xxxx 0xxx xxxx没有使用，即有2^14=16384个字符没有使用，于是加以扩充，形成了GBK字符集</p>
+<h3 id="1-0-1-国际大一统和Unicode"><a href="#1-0-1-国际大一统和Unicode" class="headerlink" title="1.0.1 国际大一统和Unicode"></a>1.0.1 国际大一统和Unicode</h3><p>不仅仅中国有中国的字符集，世界上各个国家都有自己的字符集，于是Unicode站出来了，并给出了如下的方案</p>
+<p>方案1：我们使用4字节存储一个字符，这样就可以表示2^32=42 9496 7296个字符啦，一个一个编码就可以啦<br>比如“严”字的UNICODE编码为00004E25,00000000 00000000 01001110 00100101</p>
+<p>那么这样会有两个问题</p>
+<p>Q1.纯英文文件大了4倍</p>
+<p>Q2.与ASCII不兼容，即看到00004E25是翻译成“严”还是“\0\0N%”</p>
+<p>为了解决这个问题，我们决定对UNICODE加以改造，这就是UTF-8</p>
+<p>方案2：（UTF-8字符集）</p>
+<p>UNICODE：0000 0000-FFFF FFFF（十六进制）4字节</p>
+<p>UTF-8: 1字节-6字节</p>
+<p>   |  Unicode符号范围(十六进制)      |  UTF-8编码方式(二进制)<br>   |  Unicode符号范围(十进制) </p>
+<p> 1 | 0000 0000 - 0000 007F |                                              0xxxxxxx     0-127           7</p>
+<p> 2 | 0000 0080 - 0000 07FF |                                     110xxxxx 10xxxxxx     128-2047        11</p>
+<p> 3 | 0000 0800 - 0000 FFFF |                            1110xxxx 10xxxxxx 10xxxxxx     2048-65535      16</p>
+<p> 4 | 0001 0000 - 0010 FFFF |                   11110xxx 10xxxxxx 10xxxxxx 10xxxxxx     65536-1114111   21</p>
+<p> 5 | 0020 0000 - 03FF FFFF |          111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx     2097152-67108863</p>
+<p> 6 | 0400 0000 - 7FFF FFFF | 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx     67108864-2147483674</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/10/Unicode-and-UTF-8/" data-id="ckf5gdiyi0001mgcweip0h5fy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Traversal-of-BT" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/05/Traversal-of-BT/" class="article-date">
+  <time datetime="2020-09-05T02:14:23.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/Traversal-of-BT/">Traversal of BT</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h1><h2 id="0-1-二叉树的定义"><a href="#0-1-二叉树的定义" class="headerlink" title="0.1 二叉树的定义"></a>0.1 二叉树的定义</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tnode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">left</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">right</span>;</span></span><br><span class="line">    <span class="keyword">int</span> times;</span><br><span class="line">    <span class="comment">//有时可以省略int times</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Tnode</span>* <span class="title">BinTree</span>;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-1-递归算法"><a href="#1-1-递归算法" class="headerlink" title="1.1 递归算法"></a>1.1 递归算法</h2><h3 id="1-1-1-前序遍历"><a href="#1-1-1-前序遍历" class="headerlink" title="1.1.1 前序遍历"></a>1.1.1 前序遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BinTree <span class="title">pretraversal</span><span class="params">(BinTree BT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(BT)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,BT-&gt;data);</span><br><span class="line">        pretraversal(BT-&gt;left);</span><br><span class="line">        pretraversal(BT-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-1-非递归算法"><a href="#2-1-非递归算法" class="headerlink" title="2.1 非递归算法"></a>2.1 非递归算法</h2><h3 id="2-1-1-前序遍历"><a href="#2-1-1-前序遍历" class="headerlink" title="2.1.1 前序遍历"></a>2.1.1 前序遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pretraversal</span><span class="params">(BinTree BT)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!BT) <span class="keyword">return</span>;</span><br><span class="line">    BinTree T=BT;</span><br><span class="line">    BinTree Stack[maxsize];<span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(T||top!=<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(T!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Stack[++top]=T;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>,T-&gt;data);</span><br><span class="line">            T=T-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        T=Stack[top--];</span><br><span class="line">        T=T-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-2-中序遍历"><a href="#2-1-2-中序遍历" class="headerlink" title="2.1.2 中序遍历"></a>2.1.2 中序遍历</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> InOrderTraversal)(BinTree BT)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(!BT) <span class="keyword">return</span>;</span><br><span class="line">    BinTree T=BT;</span><br><span class="line">    BinTree Stack[maxsize];<span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(T||top!=<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(T)</span><br><span class="line">        &#123;</span><br><span class="line">            Stack[++top]=T;</span><br><span class="line">            T=T-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        T=Stack[top--];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,T-&gt;data);</span><br><span class="line">        T=T-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-3-后序遍历"><a href="#2-1-3-后序遍历" class="headerlink" title="2.1.3 后序遍历"></a>2.1.3 后序遍历</h3><p>```c<br>void PostOrderTraversal(BinTree BT)<br>{<br>    if(!BT) return;<br>    BinTree T=BT;<br>    BinTree Stack[maxsize];int top=-1;</p>
+<pre><code>while(top!=-1||T)
+{
+    while(T)
+    {
+        Stack[++top]=T;
+        T=T-&gt;left;
+    }
+
+    T=Stack[top];
+    T-&gt;times++;
+    top--;
+
+    if(T-&gt;times==1)
+    {
+        Stack[++top]=T;
+        T=T-&gt;right;
+    }
+    else 
+    {
+        printf(&quot;%d&quot;,T-&gt;data);
+        T=NULL;
+    }
+
+}</code></pre><p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/05/Traversal-of-BT/" data-id="ckf5gdiyb0000mgcwcyyr6fq2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-multifile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/07/multifile/" class="article-date">
+  <time datetime="2020-07-07T01:30:06.126Z" itemprop="datePublished">2020-07-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/07/multifile/">multifile</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Standard-header-file-structure"><a href="#Standard-header-file-structure" class="headerlink" title="Standard header file structure"></a>Standard header file structure</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __MAX_H__  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __MAX_H__  </span></span><br><span class="line"></span><br><span class="line">...  </span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>hint: if a function is declared in a header file, the header file should be included everywhere the function is used and where the function is defined.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/07/multifile/" data-id="ckf5gdiyu0002mgcw1e8lemvs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-学习强国" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/" class="article-date">
@@ -438,56 +604,12 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/07/hello-world/" class="article-date">
-  <time datetime="2020-05-07T05:46:57.690Z" itemprop="datePublished">2020-05-07</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/07/hello-world/" data-id="ck9wdaje400000gcw6esr3e1o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -505,7 +627,7 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
     </div>
   </div>
 
@@ -518,23 +640,23 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
       <ul>
         
           <li>
+            <a href="/2020/09/10/Unicode-and-UTF-8/">Unicode and UTF-8</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/05/Traversal-of-BT/">Traversal of BT</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/07/multifile/">multifile</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/">学习强国</a>
           </li>
         
           <li>
             <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/02/light-physics/">light_physics</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/13/import%E7%9A%84%E8%AF%A6%E8%A7%A3/">import的详解</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题（终极版）</a>
           </li>
         
       </ul>

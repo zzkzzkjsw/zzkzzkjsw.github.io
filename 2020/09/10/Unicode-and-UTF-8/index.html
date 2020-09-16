@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Unicode and UTF-8 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="0.0.1 ASCII码的诞生美国人最先发明了电脑，电脑是由二进制存储的，故美国人至少要表示a-Z，A-Z，0-9，!@#$%^&amp;*()等等字符，最终凑够了128种符号 定义1字节为8位二进制数，可以表示2^8&#x3D;256个字符； 故ASCII码就诞生了，只占用1字节，且第一位为1，后七位分别对应a-z，A-Z，0-9，!@#$%^&amp;*()等等字符 0.1.1 中国的诞生和GB2312">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unicode and UTF-8">
+<meta property="og:url" content="http://yoursite.com/2020/09/10/Unicode-and-UTF-8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="0.0.1 ASCII码的诞生美国人最先发明了电脑，电脑是由二进制存储的，故美国人至少要表示a-Z，A-Z，0-9，!@#$%^&amp;*()等等字符，最终凑够了128种符号 定义1字节为8位二进制数，可以表示2^8&#x3D;256个字符； 故ASCII码就诞生了，只占用1字节，且第一位为1，后七位分别对应a-z，A-Z，0-9，!@#$%^&amp;*()等等字符 0.1.1 中国的诞生和GB2312">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-10T08:54:31.000Z">
+<meta property="article:modified_time" content="2020-09-16T13:58:58.369Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Unicode-and-UTF-8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/10/Unicode-and-UTF-8/" class="article-date">
+  <time datetime="2020-09-10T08:54:31.000Z" itemprop="datePublished">2020-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Unicode and UTF-8
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="0-0-1-ASCII码的诞生"><a href="#0-0-1-ASCII码的诞生" class="headerlink" title="0.0.1 ASCII码的诞生"></a>0.0.1 ASCII码的诞生</h3><p>美国人最先发明了电脑，电脑是由二进制存储的，故美国人至少要表示a-Z，A-Z，0-9，!@#$%^&amp;*()等等字符，最终凑够了128种符号</p>
+<p>定义1字节为8位二进制数，可以表示2^8=256个字符；</p>
+<p>故ASCII码就诞生了，只占用1字节，且第一位为1，后七位分别对应a-z，A-Z，0-9，!@#$%^&amp;*()等等字符</p>
+<h3 id="0-1-1-中国的诞生和GB2312字符集"><a href="#0-1-1-中国的诞生和GB2312字符集" class="headerlink" title="0.1.1 中国的诞生和GB2312字符集"></a>0.1.1 中国的诞生和GB2312字符集</h3><p>计算机传入中国，故显示汉字成为了一个新的问题，由于汉字有几千个，故用1字节表示不了，所以我们改用了2字节，这样，我们可以表示2^16=65536个字符，经多方搜查，最终确定了汉字6763个和非汉字图形字符682个，共计7445个字符，于是便有许多空出来的位置，那么专家是怎么做的呢？</p>
+<p>Q1. 计算机怎么确认是ASCII码还是GB2312?<br>A1. 我们发现ASCII码总是0xxx xxxx的形式，所以GB2312的一定是1xxx xxxx 1xxx xxxx的形式，这样算来GB2312就只能存2^14=16384个字符，不过这也绰绰有余了。</p>
+<h3 id="0-1-2-中国的发展和GBK字符集"><a href="#0-1-2-中国的发展和GBK字符集" class="headerlink" title="0.1.2 中国的发展和GBK字符集"></a>0.1.2 中国的发展和GBK字符集</h3><p>我们发现在GB2312中1xxx xxxx 0xxx xxxx没有使用，即有2^14=16384个字符没有使用，于是加以扩充，形成了GBK字符集</p>
+<h3 id="1-0-1-国际大一统和Unicode"><a href="#1-0-1-国际大一统和Unicode" class="headerlink" title="1.0.1 国际大一统和Unicode"></a>1.0.1 国际大一统和Unicode</h3><p>不仅仅中国有中国的字符集，世界上各个国家都有自己的字符集，于是Unicode站出来了，并给出了如下的方案</p>
+<p>方案1：我们使用4字节存储一个字符，这样就可以表示2^32=42 9496 7296个字符啦，一个一个编码就可以啦<br>比如“严”字的UNICODE编码为00004E25,00000000 00000000 01001110 00100101</p>
+<p>那么这样会有两个问题</p>
+<p>Q1.纯英文文件大了4倍</p>
+<p>Q2.与ASCII不兼容，即看到00004E25是翻译成“严”还是“\0\0N%”</p>
+<p>为了解决这个问题，我们决定对UNICODE加以改造，这就是UTF-8</p>
+<p>方案2：（UTF-8字符集）</p>
+<p>UNICODE：0000 0000-FFFF FFFF（十六进制）4字节</p>
+<p>UTF-8: 1字节-6字节</p>
+<p>   |  Unicode符号范围(十六进制)      |  UTF-8编码方式(二进制)<br>   |  Unicode符号范围(十进制) </p>
+<p> 1 | 0000 0000 - 0000 007F |                                              0xxxxxxx     0-127           7</p>
+<p> 2 | 0000 0080 - 0000 07FF |                                     110xxxxx 10xxxxxx     128-2047        11</p>
+<p> 3 | 0000 0800 - 0000 FFFF |                            1110xxxx 10xxxxxx 10xxxxxx     2048-65535      16</p>
+<p> 4 | 0001 0000 - 0010 FFFF |                   11110xxx 10xxxxxx 10xxxxxx 10xxxxxx     65536-1114111   21</p>
+<p> 5 | 0020 0000 - 03FF FFFF |          111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx     2097152-67108863</p>
+<p> 6 | 0400 0000 - 7FFF FFFF | 1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx     67108864-2147483674</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/10/Unicode-and-UTF-8/" data-id="ckf5gdiyi0001mgcweip0h5fy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/05/Traversal-of-BT/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Traversal of BT</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/10/Unicode-and-UTF-8/">Unicode and UTF-8</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/05/Traversal-of-BT/">Traversal of BT</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/07/multifile/">multifile</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/">学习强国</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
