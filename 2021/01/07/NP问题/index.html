@@ -5,13 +5,17 @@
   
 
   
-  <title>Archives: 2020 | Hexo</title>
+  <title>NP问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="P and NP problem1.1 P and NPP: problem that can be solved in poly-time;   NP: problem that can be verified in poly-time; 1.2 NPC AND NP-HardNP-Hard: if problem in NP-Hard can be solved, then all of th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NP问题">
+<meta property="og:url" content="http://yoursite.com/2021/01/07/NP%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="P and NP problem1.1 P and NPP: problem that can be solved in poly-time;   NP: problem that can be verified in poly-time; 1.2 NPC AND NP-HardNP-Hard: if problem in NP-Hard can be solved, then all of th">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-07T08:10:54.237Z">
+<meta property="article:modified_time" content="2021-01-07T08:31:44.015Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,45 +66,65 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/07/hello-world/" class="archive-article-date">
-  <time datetime="2020-05-07T05:46:57.690Z" itemprop="datePublished">May 7</time>
+        <section id="main"><article id="post-NP问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/07/NP%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2021-01-07T08:10:54.237Z" itemprop="datePublished">2021-01-07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/07/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      NP问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
+      </header>
     
-    <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-  </nav>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="P-and-NP-problem"><a href="#P-and-NP-problem" class="headerlink" title="P and NP problem"></a>P and NP problem</h1><h2 id="1-1-P-and-NP"><a href="#1-1-P-and-NP" class="headerlink" title="1.1 P and NP"></a>1.1 P and NP</h2><p>P: problem that can be solved in poly-time;  </p>
+<p>NP: problem that can be verified in poly-time;</p>
+<h2 id="1-2-NPC-AND-NP-Hard"><a href="#1-2-NPC-AND-NP-Hard" class="headerlink" title="1.2 NPC AND NP-Hard"></a>1.2 NPC AND NP-Hard</h2><p>NP-Hard: if problem in NP-Hard can be solved, then all of the NP problem can be solved.  </p>
+<p>NPC: if the problem is both a NP-Hard problem and a NP problem</p>
+<h2 id="1-3-Reduction"><a href="#1-3-Reduction" class="headerlink" title="1.3 Reduction"></a>1.3 Reduction</h2><p>if p1 ——-poly-time——-&gt; p2,<br>we say that p1 can be reduced to p2 ,   denoted by p1&lt;=p p2,<br>and if p2 is solved, then p1 is solved</p>
+<p>note: there are two steps to prove that p1-&gt;p2</p>
+<ol>
+<li>prove that p1 can be transformed to p2 in <code>poly-time</code></li>
+<li>prove that p1 and p2 are <code>equivlent</code></li>
+</ol>
+<h2 id="1-4-how-to-find-the-first-NPC-Promlem"><a href="#1-4-how-to-find-the-first-NPC-Promlem" class="headerlink" title="1.4 how to find the first NPC Promlem"></a>1.4 how to find the first NPC Promlem</h2><p>we should prove that all of the NP problem can be reduced to NPC0 problem,</p>
+<p>this is a very difficult task, but some NBer proved 3-SAT problem is NPC0</p>
+<h2 id="1-5-how-to-find-if-the-problem-is-NPC"><a href="#1-5-how-to-find-if-the-problem-is-NPC" class="headerlink" title="1.5 how to find if the problem is NPC"></a>1.5 how to find if the problem is NPC</h2><p>we can prove that all of the NP problem can be reduced to the problem,</p>
+<p>but we do not need to do that,<br>we just need to prove that NPC1 can be reduced to NPC0,and NPC1 is NP problem  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/01/07/NP%E9%97%AE%E9%A2%98/" data-id="ckjmlg9cg0000p4cwh9gk3tsp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/10/Unicode-and-UTF-8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Unicode and UTF-8</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         

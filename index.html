@@ -64,6 +64,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-NP问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/07/NP%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2021-01-07T08:10:54.237Z" itemprop="datePublished">2021-01-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/07/NP%E9%97%AE%E9%A2%98/">NP问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="P-and-NP-problem"><a href="#P-and-NP-problem" class="headerlink" title="P and NP problem"></a>P and NP problem</h1><h2 id="1-1-P-and-NP"><a href="#1-1-P-and-NP" class="headerlink" title="1.1 P and NP"></a>1.1 P and NP</h2><p>P: problem that can be solved in poly-time;  </p>
+<p>NP: problem that can be verified in poly-time;</p>
+<h2 id="1-2-NPC-AND-NP-Hard"><a href="#1-2-NPC-AND-NP-Hard" class="headerlink" title="1.2 NPC AND NP-Hard"></a>1.2 NPC AND NP-Hard</h2><p>NP-Hard: if problem in NP-Hard can be solved, then all of the NP problem can be solved.  </p>
+<p>NPC: if the problem is both a NP-Hard problem and a NP problem</p>
+<h2 id="1-3-Reduction"><a href="#1-3-Reduction" class="headerlink" title="1.3 Reduction"></a>1.3 Reduction</h2><p>if p1 ——-poly-time——-&gt; p2,<br>we say that p1 can be reduced to p2 ,   denoted by p1&lt;=p p2,<br>and if p2 is solved, then p1 is solved</p>
+<p>note: there are two steps to prove that p1-&gt;p2</p>
+<ol>
+<li>prove that p1 can be transformed to p2 in <code>poly-time</code></li>
+<li>prove that p1 and p2 are <code>equivlent</code></li>
+</ol>
+<h2 id="1-4-how-to-find-the-first-NPC-Promlem"><a href="#1-4-how-to-find-the-first-NPC-Promlem" class="headerlink" title="1.4 how to find the first NPC Promlem"></a>1.4 how to find the first NPC Promlem</h2><p>we should prove that all of the NP problem can be reduced to NPC0 problem,</p>
+<p>this is a very difficult task, but some NBer proved 3-SAT problem is NPC0</p>
+<h2 id="1-5-how-to-find-if-the-problem-is-NPC"><a href="#1-5-how-to-find-if-the-problem-is-NPC" class="headerlink" title="1.5 how to find if the problem is NPC"></a>1.5 how to find if the problem is NPC</h2><p>we can prove that all of the NP problem can be reduced to the problem,</p>
+<p>but we do not need to do that,<br>we just need to prove that NPC1 can be reduced to NPC0,and NPC1 is NP problem  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/01/07/NP%E9%97%AE%E9%A2%98/" data-id="ckjmlg9cg0000p4cwh9gk3tsp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Unicode-and-UTF-8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/10/Unicode-and-UTF-8/" class="article-date">
@@ -554,56 +604,6 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="article-date">
-  <time datetime="2020-05-07T06:01:04.000Z" itemprop="datePublished">2020-05-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">如何用markdown格式写博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><p>基于<code>https://www.runoob.com/markdown/md-tutorial.html</code>的指导写成此篇精简版的博客</p>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="Markdown的标题"><a href="#Markdown的标题" class="headerlink" title="Markdown的标题"></a>Markdown的标题</h3><p>使用<code>#</code>号可以表示一级标题<br><code>##</code>二级，<code>###</code>三级，以此类推,注意<code>#</code>后有空格！</p>
-<h3 id="Markdown的段落"><a href="#Markdown的段落" class="headerlink" title="Markdown的段落"></a>Markdown的段落</h3><p>在段落后面使用一个空行来表示重新开始一个段落。</p>
-<h3 id="Markdown的下划线"><a href="#Markdown的下划线" class="headerlink" title="Markdown的下划线"></a>Markdown的下划线</h3><p><code>&lt;u&gt;带下划线文本&lt;/u&gt;</code></p>
-<h3 id="Markdown代码区块"><a href="#Markdown代码区块" class="headerlink" title="Markdown代码区块"></a>Markdown代码区块</h3><p>用<code>```</code>包裹一段代码</p>
-<p>```c<br>#include &lt;stdio.h&gt;<br>int main()<br>{<br>    printf(“hello world”);<br>}<br>```</p>
-<p>效果如下:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" data-id="ck9wdajeh00010gcw3cslfmjq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -627,7 +627,7 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
     </div>
   </div>
 
@@ -638,6 +638,10 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/01/07/NP%E9%97%AE%E9%A2%98/">NP问题</a>
+          </li>
         
           <li>
             <a href="/2020/09/10/Unicode-and-UTF-8/">Unicode and UTF-8</a>
@@ -655,10 +659,6 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
             <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/">学习强国</a>
           </li>
         
-          <li>
-            <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">git的使用方法</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -671,7 +671,7 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
+      &copy; 2021 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
