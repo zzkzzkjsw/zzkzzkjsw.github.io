@@ -5,17 +5,17 @@
   
 
   
-  <title>学习强国 | Hexo</title>
+  <title>pytorch | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&#x2F;&#x2F;新闻翻页+收藏+分享Sub xinwen()    Delay 3000 * 10    Swipe 276, 1136, 274, 1014    Delay 3 * 1000    Swipe 274, 1014, 276, 1136    Delay 15 * 1000    &#x2F;&#x2F;收藏    Delay 3008    Tap 846, 1860    Delay 5000    Tap">
+  <meta name="description" content="Pitfall in Pytorch1.   torch.Tensor([0,0,1]) and torch.tensor([0,0,1])torch.Tensor([0,0,1])       [0.,0.,1.]torch.tensor([0,0,1])       [0,0,1] 2.   dataset12345678def __getitem__(self,idx):        wo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习强国">
-<meta property="og:url" content="http://yoursite.com/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/index.html">
+<meta property="og:title" content="pytorch">
+<meta property="og:url" content="http://yoursite.com/2021/05/27/pytorch/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&#x2F;&#x2F;新闻翻页+收藏+分享Sub xinwen()    Delay 3000 * 10    Swipe 276, 1136, 274, 1014    Delay 3 * 1000    Swipe 274, 1014, 276, 1136    Delay 15 * 1000    &#x2F;&#x2F;收藏    Delay 3008    Tap 846, 1860    Delay 5000    Tap">
+<meta property="og:description" content="Pitfall in Pytorch1.   torch.Tensor([0,0,1]) and torch.tensor([0,0,1])torch.Tensor([0,0,1])       [0.,0.,1.]torch.tensor([0,0,1])       [0,0,1] 2.   dataset12345678def __getitem__(self,idx):        wo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-11T11:25:00.373Z">
-<meta property="article:modified_time" content="2020-06-11T10:25:20.979Z">
+<meta property="article:published_time" content="2021-05-27T04:22:13.119Z">
+<meta property="article:modified_time" content="2021-05-27T12:30:25.262Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -66,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-学习强国" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-pytorch" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/" class="article-date">
-  <time datetime="2020-06-11T11:25:00.373Z" itemprop="datePublished">2020-06-11</time>
+    <a href="/2021/05/27/pytorch/" class="article-date">
+  <time datetime="2021-05-27T04:22:13.119Z" itemprop="datePublished">2021-05-27</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      学习强国
+      pytorch
     </h1>
   
 
@@ -88,50 +88,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>//新闻翻页+收藏+分享<br>Sub xinwen()<br>    Delay 3000 * 10<br>    Swipe 276, 1136, 274, 1014<br>    Delay 3 * 1000<br>    Swipe 274, 1014, 276, 1136<br>    Delay 15 * 1000<br>    //收藏<br>    Delay 3008<br>    Tap 846, 1860<br>    Delay 5000<br>    Tap 534, 1475<br>    Delay 4028<br>    //分享<br>    Delay 4869<br>    Tap 992, 1853<br>    Delay 4569<br>    Tap 119, 1079<br>    Delay 2631<br>    Tap 364, 910<br>    Delay 3578<br>    Tap 832, 1249<br>    Delay 2963<br>    //评论<br>    Tap 199, 1851<br>    Delay 3965<br>    InputText “为中国共产党点赞”<br>    Delay 2569<br>    Tap 963, 1689<br>    Delay 5689<br>    //退出<br>    Tap 75, 161<br>    Delay 2048<br>End Sub</p>
-<p>//试听学习<br>Tap 757, 1819</p>
-<p>Delay 2068</p>
-<p>Tap 674, 285</p>
-<p>Delay 2075</p>
-<p>//学习第一个视频<br>Tap 520, 688<br>    Delay 3000 * 10<br>    Swipe 276, 1136, 274, 1014<br>    Delay 3 * 1000<br>    Swipe 274, 1014, 276, 1136<br>    Delay 20 * 60 * 1000</p>
-<pre><code>//收藏
-Delay 3008 
-Tap 846, 1860
-Delay 5000
-Tap 534, 1475
-Delay 4028
-//分享
-Delay 4869
-Tap 992, 1853
-Delay 4569
-Tap 119, 1079
-Delay 2631
-Tap 364, 910
-Delay 3578
-Tap 832, 1249
-delay 2963
-//评论
-Tap 199, 1851
-Delay 3965
-InputText &quot;为习大大点赞&quot;
-Delay 2569
-Tap 963, 1689
-Delay 5689
-//退出
-Tap 75, 161
-Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p>
-<p>Swipe 465, 1600, 495, 1004<br>Delay 5008<br>//学习第三个视频<br>Tap 528,1112<br>xinwen </p>
-<p>//学习第四个视频<br>Tap 516,1616<br>xinwen </p>
-<p>Swipe 465, 1600, 495, 1004<br>Delay 6080<br>//学习第五个视频<br>Tap 528, 1112<br>xinwen </p>
-<p>//学习第六个视频<br>Tap 516, 1616<br>xinwen </p>
-<p>//学习第七个视频<br>Tap 294, 283<br>Delay 2048<br>Tap 274, 863<br>xinwen </p>
-<p>//学习第八个视频<br>Tap 435,1652<br>xinwen </p>
-<p>//退出<br>KeyPress “Home”</p>
+        <h1 id="Pitfall-in-Pytorch"><a href="#Pitfall-in-Pytorch" class="headerlink" title="Pitfall in Pytorch"></a>Pitfall in Pytorch</h1><h2 id="1-torch-Tensor-0-0-1-and-torch-tensor-0-0-1"><a href="#1-torch-Tensor-0-0-1-and-torch-tensor-0-0-1" class="headerlink" title="1.   torch.Tensor([0,0,1]) and torch.tensor([0,0,1])"></a>1.   torch.Tensor([0,0,1]) and torch.tensor([0,0,1])</h2><p>torch.Tensor([0,0,1])       [0.,0.,1.]<br>torch.tensor([0,0,1])       [0,0,1]</p>
+<h2 id="2-dataset"><a href="#2-dataset" class="headerlink" title="2.   dataset"></a>2.   dataset</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,idx)</span>:</span></span><br><span class="line">        word=eval(df.iloc[idx,<span class="number">0</span>])</span><br><span class="line">        label=df.iloc[idx,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        word=np.array(word,dtype=np.float32)</span><br><span class="line">        label=np.array(label,dtype=np.float32)</span><br><span class="line">        <span class="keyword">return</span> word,label</span><br></pre></td></tr></table></figure>
+
+<p>word and label must be numpy.ndarray or numpy.int64,numpy.float32<br>if word is a list or numpy.float64, there will be a bug</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/11/%E5%AD%A6%E4%B9%A0%E5%BC%BA%E5%9B%BD/" data-id="ckbap4r8x0000t4cwh9hwcjpk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/05/27/pytorch/" data-id="ckp6vk9op0001x4cwfb201068" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,19 +105,10 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
     
 <nav id="article-nav">
   
-    <a href="/2020/07/07/multifile/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          multifile
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/03/git%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/05/26/machineLearning/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">git的使用方法</div>
+      <div class="article-nav-title">machineLearning</div>
     </a>
   
 </nav>

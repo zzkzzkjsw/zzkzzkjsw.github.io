@@ -64,6 +64,82 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pytorch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/05/27/pytorch/" class="article-date">
+  <time datetime="2021-05-27T04:22:13.119Z" itemprop="datePublished">2021-05-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/27/pytorch/">pytorch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Pitfall-in-Pytorch"><a href="#Pitfall-in-Pytorch" class="headerlink" title="Pitfall in Pytorch"></a>Pitfall in Pytorch</h1><h2 id="1-torch-Tensor-0-0-1-and-torch-tensor-0-0-1"><a href="#1-torch-Tensor-0-0-1-and-torch-tensor-0-0-1" class="headerlink" title="1.   torch.Tensor([0,0,1]) and torch.tensor([0,0,1])"></a>1.   torch.Tensor([0,0,1]) and torch.tensor([0,0,1])</h2><p>torch.Tensor([0,0,1])       [0.,0.,1.]<br>torch.tensor([0,0,1])       [0,0,1]</p>
+<h2 id="2-dataset"><a href="#2-dataset" class="headerlink" title="2.   dataset"></a>2.   dataset</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,idx)</span>:</span></span><br><span class="line">        word=eval(df.iloc[idx,<span class="number">0</span>])</span><br><span class="line">        label=df.iloc[idx,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        word=np.array(word,dtype=np.float32)</span><br><span class="line">        label=np.array(label,dtype=np.float32)</span><br><span class="line">        <span class="keyword">return</span> word,label</span><br></pre></td></tr></table></figure>
+
+<p>word and label must be numpy.ndarray or numpy.int64,numpy.float32<br>if word is a list or numpy.float64, there will be a bug</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/05/27/pytorch/" data-id="ckp6vk9op0001x4cwfb201068" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-machineLearning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/05/26/machineLearning/" class="article-date">
+  <time datetime="2021-05-26T06:31:47.663Z" itemprop="datePublished">2021-05-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/26/machineLearning/">machineLearning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/05/26/machineLearning/" data-id="ckp6vk9o10000x4cwbaur0ync" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vpn" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/02/09/vpn/" class="article-date">
@@ -499,88 +575,6 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
 
 
   
-    <article id="post-import的详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/13/import%E7%9A%84%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time datetime="2020-05-13T03:08:31.000Z" itemprop="datePublished">2020-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/import%E7%9A%84%E8%AF%A6%E8%A7%A3/">import的详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>import的寻找过程：<br>1.先到python解释器自带的模块中寻找<br>2.sys.path中寻找<br>3.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/13/import%E7%9A%84%E8%AF%A6%E8%A7%A3/" data-id="ckaxm99c70001q4cwdjaw5x2g" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-python不同版本的兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2020-05-10T14:59:37.000Z" itemprop="datePublished">2020-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">python不同版本的兼容问题（终极版）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>让python2.7，python3.6，python3.8其乐融融</p>
-<hr>
-<p>第一步</p>
-<p>安装python2.7，python3.6，python3.8,安装时已经有pip,并且默认添加到环境变量PATH</p>
-<p>第二步</p>
-<p>将所有需要python的命令分别改成<code>py -3.8</code>或<code>py -3.6</code>或<code>py -2.7</code></p>
-<p>例如：<br>改前的cmd命令：<code>python pip install ***</code><br>改后的cmd命令：<code>py -3.8 pip install ***</code></p>
-<hr>
-<p>写在后面：本文为终极版，曾经也踩了不少坑，最开始的做法是改名，但是pip炸了，后来有用reinstall强行续命，但是venv又炸了，故重新研究，此方法是终极版，也是最省时省力的方法，无需再改（也是官方推荐）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/10/python%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/" data-id="cka17ill200005ccw2h6hfnvh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -604,7 +598,7 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
     </div>
   </div>
 
@@ -617,6 +611,14 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
       <ul>
         
           <li>
+            <a href="/2021/05/27/pytorch/">pytorch</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/26/machineLearning/">machineLearning</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/09/vpn/">vpn</a>
           </li>
         
@@ -626,14 +628,6 @@ Delay 2048</code></pre><p>//学习第二个视频<br>Tap 485,1568<br>xinwen()</p
         
           <li>
             <a href="/2020/09/10/Unicode-and-UTF-8/">Unicode and UTF-8</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/05/Traversal-of-BT/">Traversal of BT</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/07/multifile/">multifile</a>
           </li>
         
       </ul>
